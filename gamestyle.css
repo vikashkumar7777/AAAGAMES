@@ -1,0 +1,510 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #101820;  
+    color: white; }
+/* Game Introduction */
+/* Back to Games Button */
+
+.back-button {
+    display: inline-block;
+    margin: 25px 40px;
+    padding: 10px 18px;
+
+    color: white;
+    background-color: #18232d;
+
+    text-decoration: none;
+    border-radius: 6px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #1b75d0;
+    transform: translateX(-3px);
+}
+
+.game-detail {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.game-detail h1 {
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.game-description {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px;
+    align-items: center;
+}
+
+.game-description img {
+    width: 300px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.game-info {
+    flex: 1;
+    min-width: 300px;
+    padding: 30px;
+    background-color: #18232d;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.game-info h2 {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.game-info > p {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 650px;
+}
+
+.game-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.game-details p {
+    margin: 0;
+    padding: 10px 15px;
+    background-color: #101820;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.game-details strong {
+    color: #66c0f4;
+    margin-right: 6px;
+}
+
+/* Trailer */
+
+.trailer {
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 20px;
+}
+
+.trailer h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.trailer iframe {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    border: none;
+    border-radius: 12px;
+    display: block;
+}
+/* Screenshots */
+
+.screenshots {
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 20px;
+}
+
+.screenshots h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.image-container img {
+    width: 320px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Purchase */
+
+.purchase-links {
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.purchase-links h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.purchase-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.purchase-container p {
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.purchase-container a {
+    display: block;
+    padding: 14px 25px;
+    background-color: #1b75d0;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.purchase-container a:hover {
+    transform: translateY(-3px);
+    background-color: #2d8bea;
+}
+/* PC Requirements */
+
+.requirements {
+    max-width: 1100px;
+    margin: 70px auto;
+    padding: 20px;
+}
+
+.requirements h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.requirements-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.requirement-box {
+    flex: 1;
+    min-width: 300px;
+    padding: 30px;
+    background-color: #18232d;
+    border: 1px solid #263746;
+    border-radius: 12px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.requirement-box:hover {
+    transform: translateY(-5px);
+    border-color: #4db8ff;
+}
+
+.requirement-box h3 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.requirement-box p {
+    line-height: 1.6;
+    margin: 12px 0;
+}
+
+.requirement-box strong {
+    color: #66c0f4;
+}
+/* Fullscreen Screenshot Viewer */
+
+.fullscreen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.92);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.fullscreen-image img {
+    max-width: 85%;
+    max-height: 85%;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+}
+
+
+/* Close Button */
+
+.close-image {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    font-size: 42px;
+    color: white;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    z-index: 10000;
+}
+
+.close-image:hover {
+    color: #4db8ff;
+}
+
+
+/* Previous & Next Buttons */
+
+.previous-image,
+.next-image {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.previous-image {
+    left: 30px;
+}
+
+.next-image {
+    right: 30px;
+}
+
+.previous-image:hover,
+.next-image:hover {
+    background-color: rgba(77, 184, 255, 0.7);
+
+    transform: translateY(-50%) scale(1.1);
+}
+
+
+/* Image Counter */
+
+.image-counter {
+    position: absolute;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    padding: 8px 15px;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    border-radius: 20px;
+
+    font-size: 15px;
+    color: white;
+}
+@media (max-width: 768px) {
+
+    .game-detail {
+        margin: 20px;
+        padding: 0;
+    }
+
+    .game-detail h1 {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+
+    .game-description {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .game-description img {
+        width: 250px;
+        height: 375px;
+    }
+
+    .game-info {
+        width: 100%;
+        min-width: 0;
+        padding: 20px;
+    }
+
+    .game-info h2 {
+        font-size: 25px;
+    }
+
+    .game-info > p {
+        font-size: 16px;
+    }
+
+    .game-details {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .game-details p {
+        font-size: 15px;
+    }
+
+    .trailer {
+        margin: 40px auto;
+        padding: 15px;
+    }
+
+    .trailer h2 {
+        font-size: 25px;
+    }
+
+    .trailer iframe {
+        width: 100%;
+        height: 220px;
+    }
+
+    .screenshots {
+        margin: 40px auto;
+        padding: 15px;
+    }
+
+    .screenshots h2 {
+        font-size: 25px;
+    }
+
+    .image-container {
+        gap: 15px;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .purchase-links {
+        margin: 40px auto;
+        padding: 15px;
+    }
+
+    .purchase-links h2 {
+        font-size: 25px;
+    }
+
+    .purchase-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .purchase-container a {
+        width: 90%;
+        box-sizing: border-box;
+    }
+
+    .requirements {
+        margin: 40px 15px;
+        padding: 15px;
+    }
+
+    .requirements h2 {
+        font-size: 25px;
+    }
+
+    .requirements-container {
+        flex-direction: column;
+    }
+
+    .requirement-box {
+        min-width: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .requirement-box h3 {
+        font-size: 20px;
+    }
+
+    .requirement-box p {
+        font-size: 15px;
+    }
+
+   .back-button {
+    margin: 15px 20px;
+    font-size: 15px;
+}
+
+    /* Fullscreen image */
+    .fullscreen-image img {
+        max-width: 92%;
+        max-height: 80%;
+    }
+
+    .previous-image,
+    .next-image {
+        width: 45px;
+        height: 45px;
+        font-size: 24px;
+    }
+
+    .previous-image {
+        left: 10px;
+    }
+
+    .next-image {
+        right: 10px;
+    }
+
+    .close-image {
+        top: 10px;
+        right: 15px;
+        font-size: 35px;
+    }
+}
