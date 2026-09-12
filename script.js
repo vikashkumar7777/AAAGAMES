@@ -146,13 +146,13 @@ function showSlide(index, direction = 1) {
         // Bring new image into the center
         setTimeout(function() {
 
-            featuredImage.style.transition = "transform 0.5s ease";
+            featuredImage.style.transition = "transform 0.6s ease";
 
             featuredImage.style.transform = "translateX(0)";
 
         }, 50);
 
-    }, 250);
+    }, 400);
 
 
     // Update dots
