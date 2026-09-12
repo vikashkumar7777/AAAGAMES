@@ -114,6 +114,45 @@ let currentSlide = 0;
 
 
 // SHOW SLIDE
+// MOBILE SWIPE FOR FEATURED GAMES
+
+const featured = document.querySelector(".featured");
+
+let touchStartX = 0;
+
+featured.addEventListener("touchstart", function(event) {
+    touchStartX = event.touches[0].clientX;
+}, { passive: true });
+
+featured.addEventListener("touchend", function(event) {
+
+    const touchEndX = event.changedTouches[0].clientX;
+    const swipeDistance = touchEndX - touchStartX;
+
+    if (Math.abs(swipeDistance) > 50) {
+
+        if (swipeDistance < 0) {
+            currentSlide++;
+
+            if (currentSlide >= featuredGames.length) {
+                currentSlide = 0;
+            }
+
+            showSlide(currentSlide, 1);
+
+        } else {
+            currentSlide--;
+
+            if (currentSlide < 0) {
+                currentSlide = featuredGames.length - 1;
+            }
+
+            showSlide(currentSlide, -1);
+        }
+    }
+
+}, { passive: true });
+
 
 function showSlide(index, direction = 1) {
 
