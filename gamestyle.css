@@ -493,9 +493,13 @@ body {
 
     /* Fullscreen image */
     .fullscreen-image img {
-        max-width: 92%;
-        max-height: 80%;
-    }
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    border-radius: 8px;
+    touch-action: none;
+}
+   
 
     .previous-image,
     .next-image {

@@ -38,38 +38,29 @@ screenshotLinks.forEach(function(link, index) {
         const nextButton = fullImage.querySelector(".next-image");
         const closeButton = fullImage.querySelector(".close-image");
         const counter = fullImage.querySelector(".image-counter");
-                // MOBILE SWIPE
-        let touchStartX = 0;
-        let touchEndX = 0;
+       // MOBILE SWIPE
+let touchStartX = 0;
 
-        fullImage.addEventListener("touchstart", function(event) {
+fullImageElement.addEventListener("touchstart", function(event) {
+    touchStartX = event.touches[0].clientX;
+}, { passive: true });
 
-            touchStartX = event.changedTouches[0].screenX;
+fullImageElement.addEventListener("touchend", function(event) {
 
-        });
+    const touchEndX = event.changedTouches[0].clientX;
+    const swipeDistance = touchEndX - touchStartX;
 
-        fullImage.addEventListener("touchend", function(event) {
+    if (Math.abs(swipeDistance) > 50) {
 
-            touchEndX = event.changedTouches[0].screenX;
+        if (swipeDistance < 0) {
+            nextButton.click();
+        } else {
+            previousButton.click();
+        }
 
-            const swipeDistance = touchEndX - touchStartX;
+    }
 
-            if (Math.abs(swipeDistance) > 50) {
-
-                if (swipeDistance < 0) {
-                   
-                    nextButton.click();
-                } 
-                else {
-                    
-                    previousButton.click();
-                }
-
-            }
-
-        });
-
-
+}, { passive: true });
         function showImage(index) {
 
             currentIndex = index;
