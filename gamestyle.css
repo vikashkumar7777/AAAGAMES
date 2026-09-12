@@ -426,9 +426,10 @@ body {
     }
 
     .image-container img {
-        width: 100%;
-        height: auto;
-    }
+    width: calc(50% - 8px);
+    height: 120px;
+    object-fit: cover;
+}
 
     .purchase-links {
         margin: 40px auto;
