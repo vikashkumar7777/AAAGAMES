@@ -427,6 +427,7 @@ footer {
         height: 220px;
         margin: 20px auto;
         border-radius: 10px;
+        touch-action: pan-y;
     }
 
     .featured-slide img {

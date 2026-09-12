@@ -113,25 +113,46 @@ const featuredGames = [
 let currentSlide = 0;
 
 
-// SHOW SLIDE
+// MOBILE SWIPE FOR FEATURED GAMES
+
 // MOBILE SWIPE FOR FEATURED GAMES
 
 const featured = document.querySelector(".featured");
 
 let touchStartX = 0;
+let touchEndX = 0;
+let isSwiping = false;
 
 featured.addEventListener("touchstart", function(event) {
+
     touchStartX = event.touches[0].clientX;
+    isSwiping = false;
+
 }, { passive: true });
+
+
+featured.addEventListener("touchmove", function(event) {
+
+    touchEndX = event.touches[0].clientX;
+
+    if (Math.abs(touchEndX - touchStartX) > 20) {
+        isSwiping = true;
+    }
+
+}, { passive: true });
+
 
 featured.addEventListener("touchend", function(event) {
 
-    const touchEndX = event.changedTouches[0].clientX;
+    touchEndX = event.changedTouches[0].clientX;
+
     const swipeDistance = touchEndX - touchStartX;
 
     if (Math.abs(swipeDistance) > 50) {
 
         if (swipeDistance < 0) {
+
+            // Swipe left → next
             currentSlide++;
 
             if (currentSlide >= featuredGames.length) {
@@ -141,6 +162,8 @@ featured.addEventListener("touchend", function(event) {
             showSlide(currentSlide, 1);
 
         } else {
+
+            // Swipe right → previous
             currentSlide--;
 
             if (currentSlide < 0) {
@@ -152,8 +175,6 @@ featured.addEventListener("touchend", function(event) {
     }
 
 }, { passive: true });
-
-
 function showSlide(index, direction = 1) {
 
     currentSlide = index;
