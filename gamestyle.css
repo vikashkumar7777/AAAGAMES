@@ -425,7 +425,7 @@ body {
         gap: 15px;
     }
 
-    .image-container img {
+ .image-container img {
     width: calc(50% - 8px);
     height: 120px;
     object-fit: cover;
