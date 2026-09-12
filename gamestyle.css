@@ -492,12 +492,13 @@ body {
 }
 
     /* Fullscreen image */
-    .fullscreen-image img {
+  .fullscreen-image img {
     max-width: 85%;
     max-height: 85%;
     object-fit: contain;
     border-radius: 8px;
     touch-action: none;
+    transition: opacity 0.25s ease;
 }
    
 

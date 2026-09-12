@@ -61,18 +61,26 @@ fullImageElement.addEventListener("touchend", function(event) {
     }
 
 }, { passive: true });
-        function showImage(index) {
+       function showImage(index) {
 
-            currentIndex = index;
+    currentIndex = index;
 
-            const image = screenshotLinks[currentIndex].querySelector("img");
+    const image = screenshotLinks[currentIndex].querySelector("img");
 
-            fullImageElement.src = image.src;
-            fullImageElement.alt = image.alt;
+    fullImageElement.style.opacity = "0";
 
-            counter.textContent =
-                `${currentIndex + 1} / ${screenshotLinks.length}`;
-        }
+    setTimeout(function() {
+
+        fullImageElement.src = image.src;
+        fullImageElement.alt = image.alt;
+
+        counter.textContent =
+            `${currentIndex + 1} / ${screenshotLinks.length}`;
+
+        fullImageElement.style.opacity = "1";
+
+    }, 350);
+}
 
 
         nextButton.addEventListener("click", function() {
