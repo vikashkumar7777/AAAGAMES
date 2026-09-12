@@ -61,25 +61,46 @@ fullImageElement.addEventListener("touchend", function(event) {
     }
 
 }, { passive: true });
-       function showImage(index) {
+     function showImage(index, direction = "next") {
 
     currentIndex = index;
 
     const image = screenshotLinks[currentIndex].querySelector("img");
 
-    fullImageElement.style.opacity = "0";
+    // Slide current image out
+    if (direction === "next") {
+        fullImageElement.style.transform = "translateX(-100%)";
+    } else {
+        fullImageElement.style.transform = "translateX(100%)";
+    }
 
     setTimeout(function() {
 
+        // Change image
         fullImageElement.src = image.src;
         fullImageElement.alt = image.alt;
 
         counter.textContent =
             `${currentIndex + 1} / ${screenshotLinks.length}`;
 
-        fullImageElement.style.opacity = "1";
+        // Put new image on the opposite side
+        fullImageElement.style.transition = "none";
 
-    }, 350);
+        if (direction === "next") {
+            fullImageElement.style.transform = "translateX(100%)";
+        } else {
+            fullImageElement.style.transform = "translateX(-100%)";
+        }
+
+        // Animate new image into the center
+        requestAnimationFrame(function() {
+
+            fullImageElement.style.transition = "transform 0.25s ease";
+            fullImageElement.style.transform = "translateX(0)";
+
+        });
+
+    }, 250);
 }
 
 
@@ -91,7 +112,7 @@ fullImageElement.addEventListener("touchend", function(event) {
                 currentIndex = 0;
             }
 
-            showImage(currentIndex);
+            showImage(currentIndex,"next");
 
         });
 
@@ -104,7 +125,7 @@ fullImageElement.addEventListener("touchend", function(event) {
                 currentIndex = screenshotLinks.length - 1;
             }
 
-            showImage(currentIndex);
+            showImage(currentIndex,"previous");
 
         });
 
@@ -124,7 +145,7 @@ fullImageElement.addEventListener("touchend", function(event) {
             currentIndex = 0;
         }
 
-        showImage(currentIndex);
+        showImage(currentIndex,"next");
     }
 
     if (event.key === "ArrowLeft") {
@@ -134,7 +155,7 @@ fullImageElement.addEventListener("touchend", function(event) {
             currentIndex = screenshotLinks.length - 1;
         }
 
-        showImage(currentIndex);
+        showImage(currentIndex,"previous");
     }
 
     if (event.key === "Escape") {
