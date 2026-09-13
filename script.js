@@ -212,7 +212,7 @@ function showSlide(index, direction = 1) {
 
         }, 50);
 
-    }, 400);
+    }, 300);
 
 
     // Update dots
