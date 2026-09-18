@@ -366,16 +366,15 @@ footer {
         height: 110px;
     }
 
-    .search-box {
-        position: absolute;
-        left: 50%;
-        top: 0;
-        transform: translateX(-50%);
-        padding: 10px 0;
-        width: 90%;
-        justify-content: center;
-    }
-
+   .search-box {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    padding: 10px 0;
+    width: 90%;
+    justify-content: center;
+}
     #search {
         width: 100%;
         max-width: 300px;
@@ -388,17 +387,19 @@ footer {
         max-width: 300px;
     }
 
-    .navlinks {
-    top: 80px;
+  .navlinks {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+
     width: 100%;
     justify-content: center;
     gap: 20px;
-    pointer-events: none;
 }
 
 .navlinks a {
     font-size: 16px;
-    pointer-events: auto;
 }
 
     /* Section headings */
@@ -476,4 +477,11 @@ footer {
         padding: 20px 10px;
         font-size: 13px;
     }
+}
+#search-results {
+    pointer-events: auto;
+}
+
+#search-results div {
+    pointer-events: auto;
 }
