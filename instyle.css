@@ -477,6 +477,9 @@ footer {
         padding: 20px 10px;
         font-size: 13px;
     }
+    #search-results {
+    z-index: 99999;
+}
 }
 #search-results {
     pointer-events: auto;
